@@ -13,6 +13,7 @@ export DATASETS_DIR=/path/to/your/datasets
 
 sudo docker run --gpus all -it --name cuda-dev \
   # --runtime=nvidia \ enable this if error on `libnvidia-ml.so.1`, see https://github.com/NVIDIA/nvidia-container-toolkit/issues/305#issuecomment-2916747627 for details
+  --network=host \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DRIVER_CAPABILITIES=all \
   -v "$REPOS_DIR:/workspace/repos" \
